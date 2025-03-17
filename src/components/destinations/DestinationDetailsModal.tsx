@@ -1,7 +1,8 @@
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { MapPin, Calendar, Star, Globe } from "lucide-react";
+import { MapPin, Calendar, Star, Phone } from "lucide-react";
 import AnimatedImage from "../shared/AnimatedImage";
+import { Link } from "react-router-dom";
 
 interface DestinationDetailsModalProps {
   isOpen: boolean;
@@ -80,13 +81,13 @@ const DestinationDetailsModal = ({ isOpen, onClose, destination }: DestinationDe
         </div>
         
         <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
-          <button 
+          <Link 
+            to="/contact"
             className="w-full py-3 bg-travel-600 hover:bg-travel-700 text-white rounded-lg transition-colors font-medium flex items-center justify-center"
-            onClick={() => window.location.href = `/destinations/${destination.id}`}
           >
-            <Globe size={18} className="mr-2" />
-            Explore Full Trip Details
-          </button>
+            <Phone size={18} className="mr-2" />
+            Contact Us
+          </Link>
         </div>
       </DialogContent>
     </Dialog>
