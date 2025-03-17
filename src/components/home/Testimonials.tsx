@@ -29,7 +29,7 @@ const testimonials = [
     name: 'Michael Chen',
     location: 'Singapore Experience',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop',
-    testimonial: 'The Singapore package was incredible value for money. The team's knowledge of the city allowed us to experience both iconic attractions and hidden gems. Their restaurant recommendations were spot on too!',
+    testimonial: "The Singapore package was incredible value for money. The team's knowledge of the city allowed us to experience both iconic attractions and hidden gems. Their restaurant recommendations were spot on too!",
     rating: 4,
   },
 ];
