@@ -1,11 +1,11 @@
-
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import SectionHeading from '../shared/SectionHeading';
 import AnimatedImage from '../shared/AnimatedImage';
 import { useInView } from '@/utils/animations';
+import DestinationDetailsModal from '../destinations/DestinationDetailsModal';
 
 // Sample featured destinations data
 const featuredDestinations = [
@@ -16,6 +16,16 @@ const featuredDestinations = [
     image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8f5?q=80&w=2071&auto=format&fit=crop',
     price: '1299',
     rating: 4.8,
+    location: 'Dubai, UAE',
+    duration: '5 Days',
+    longDescription: 'Experience the ultimate luxury and architectural marvels of Dubai. From the towering Burj Khalifa to the stunning Palm Jumeirah, discover a city that defies expectations. Enjoy shopping at world-class malls, desert safaris, and exquisite dining experiences.',
+    highlights: [
+      'Visit the iconic Burj Khalifa, the world\'s tallest building',
+      'Experience desert safari with dune bashing and traditional dinner',
+      'Explore the magnificent Dubai Mall and see the Dubai Fountain show',
+      'Relax on pristine beaches along the Arabian Gulf',
+      'Tour the historic Al Fahidi neighborhood and Dubai Creek'
+    ]
   },
   {
     id: 2,
@@ -24,6 +34,16 @@ const featuredDestinations = [
     image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2938&auto=format&fit=crop',
     price: '999',
     rating: 4.9,
+    location: 'Bali, Indonesia',
+    duration: '7 Days',
+    longDescription: 'Escape to the tropical paradise of Bali where lush rice terraces, ancient temples, and pristine beaches await. Immerse yourself in the unique Hindu culture, enjoy world-class surfing, and experience the famous Balinese hospitality and spa treatments.',
+    highlights: [
+      'Visit sacred temples including Tanah Lot and Uluwatu',
+      'Explore the cultural heart of Bali in Ubud',
+      'Relax on the beaches of Kuta, Seminyak or Nusa Dua',
+      'Witness traditional Balinese dance performances',
+      'Take a cooking class and learn to make authentic Balinese cuisine'
+    ]
   },
   {
     id: 3,
@@ -54,6 +74,13 @@ const featuredDestinations = [
 const FeaturedDestinations = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [sectionRef, isInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [selectedDestination, setSelectedDestination] = useState<null | typeof featuredDestinations[0]>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const handleOpenModal = (destination: typeof featuredDestinations[0]) => {
+    setSelectedDestination(destination);
+    setIsModalOpen(true);
+  };
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -69,7 +96,6 @@ const FeaturedDestinations = () => {
     }
   };
 
-  // Generate stars based on rating
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }).map((_, index) => (
       <svg 
@@ -157,13 +183,13 @@ const FeaturedDestinations = () => {
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                     {destination.description}
                   </p>
-                  <Link
-                    to={`/destinations/${destination.id}`}
+                  <button
+                    onClick={() => handleOpenModal(destination)}
                     className="inline-flex items-center text-travel-600 hover:text-travel-700 transition-colors font-medium"
                   >
                     <span>Explore More</span>
                     <ArrowRight size={16} className="ml-1" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -180,6 +206,12 @@ const FeaturedDestinations = () => {
           </Link>
         </div>
       </div>
+      
+      <DestinationDetailsModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        destination={selectedDestination}
+      />
     </section>
   );
 };
