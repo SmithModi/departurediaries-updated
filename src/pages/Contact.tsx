@@ -6,9 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Separator } from '@/components/ui/separator';
 import SectionHeading from '@/components/shared/SectionHeading';
 
 const Contact = () => {
@@ -52,9 +50,9 @@ const Contact = () => {
       {/* Main Content */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Contact Information */}
-            <div className="lg:col-span-1">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* Contact Information & Map in one column */}
+            <div className="lg:col-span-4 space-y-6">
               <SectionHeading
                 subtitle="Reach Out To Us"
                 title="Get in Touch"
@@ -62,20 +60,20 @@ const Contact = () => {
                 className="text-left"
               />
               
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Have questions about a destination or need help planning your 
                 trip? Our travel experts are ready to assist you.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <Card>
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <div className="h-10 w-10 rounded-full bg-travel-100 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="text-travel-600" size={20} />
+                  <CardContent className="p-4 flex items-start gap-4">
+                    <div className="h-8 w-8 rounded-full bg-travel-100 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="text-travel-600" size={16} />
                     </div>
                     <div>
-                      <h3 className="font-medium text-lg mb-1">Address</h3>
-                      <p className="text-gray-600 dark:text-gray-400">
+                      <h3 className="font-medium text-base mb-1">Address</h3>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">
                         Office No 1018, 10th Floor, RK World Tower<br />
                         Near Sheetal Park BRTS, 150 Feet Ring Rd,<br />
                         above Zudio, Rajkot, Gujarat 360006
@@ -85,13 +83,13 @@ const Contact = () => {
                 </Card>
 
                 <Card>
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <div className="h-10 w-10 rounded-full bg-travel-100 flex items-center justify-center flex-shrink-0">
-                      <Phone className="text-travel-600" size={20} />
+                  <CardContent className="p-4 flex items-start gap-4">
+                    <div className="h-8 w-8 rounded-full bg-travel-100 flex items-center justify-center flex-shrink-0">
+                      <Phone className="text-travel-600" size={16} />
                     </div>
                     <div>
-                      <h3 className="font-medium text-lg mb-1">Phone</h3>
-                      <p className="text-gray-600 dark:text-gray-400">
+                      <h3 className="font-medium text-base mb-1">Phone</h3>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">
                         <a href="tel:+919898048778" className="hover:text-travel-600 transition-colors">
                           +91 98980 48778
                         </a>
@@ -101,13 +99,13 @@ const Contact = () => {
                 </Card>
 
                 <Card>
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <div className="h-10 w-10 rounded-full bg-travel-100 flex items-center justify-center flex-shrink-0">
-                      <Mail className="text-travel-600" size={20} />
+                  <CardContent className="p-4 flex items-start gap-4">
+                    <div className="h-8 w-8 rounded-full bg-travel-100 flex items-center justify-center flex-shrink-0">
+                      <Mail className="text-travel-600" size={16} />
                     </div>
                     <div>
-                      <h3 className="font-medium text-lg mb-1">Email</h3>
-                      <p className="text-gray-600 dark:text-gray-400">
+                      <h3 className="font-medium text-base mb-1">Email</h3>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">
                         <a href="mailto:info@departurediaries.com" className="hover:text-travel-600 transition-colors">
                           info@departurediaries.com
                         </a>
@@ -117,13 +115,13 @@ const Contact = () => {
                 </Card>
 
                 <Card>
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <div className="h-10 w-10 rounded-full bg-travel-100 flex items-center justify-center flex-shrink-0">
-                      <Clock className="text-travel-600" size={20} />
+                  <CardContent className="p-4 flex items-start gap-4">
+                    <div className="h-8 w-8 rounded-full bg-travel-100 flex items-center justify-center flex-shrink-0">
+                      <Clock className="text-travel-600" size={16} />
                     </div>
                     <div>
-                      <h3 className="font-medium text-lg mb-1">Hours</h3>
-                      <p className="text-gray-600 dark:text-gray-400">
+                      <h3 className="font-medium text-base mb-1">Hours</h3>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">
                         Monday - Friday: 9:00 AM - 7:30 PM<br />
                         Saturday: 10:00 AM - 5:00 PM<br />
                         Sunday: Closed
@@ -132,17 +130,34 @@ const Contact = () => {
                   </CardContent>
                 </Card>
               </div>
+              
+              {/* Mini Map */}
+              <Card className="mt-6 shadow-md overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="h-[240px] w-full">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6768508953726!2d70.77235287514757!3d22.290715479741465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca248c77c099%3A0x44f7d73464f8da8c!2sRK%20World%20Tower%2C%20150%20Feet%20Ring%20Rd%2C%20above%20Zudio%2C%20Rajkot%2C%20Gujarat%20360005!5e0!3m2!1sen!2sin!4v1710934068309!5m2!1sen!2sin" 
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Office Location"
+                    ></iframe>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <Card className="shadow-lg border-0">
-                <CardContent className="p-8">
+            <div className="lg:col-span-8">
+              <Card className="shadow-lg border-0 h-full">
+                <CardContent className="p-6 md:p-8">
                   <h2 className="font-display text-2xl font-semibold mb-6">Send Us a Message</h2>
                   
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <FormField
                           control={form.control}
                           name="name"
@@ -213,30 +228,6 @@ const Contact = () => {
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <SectionHeading
-            subtitle="Find Us"
-            title="Our Location"
-            centered={true}
-            className="mb-8"
-          />
-          
-          <div className="mt-8 rounded-lg overflow-hidden shadow-lg h-[400px]">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6768508953726!2d70.77235287514757!3d22.290715479741465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca248c77c099%3A0x44f7d73464f8da8c!2sRK%20World%20Tower%2C%20150%20Feet%20Ring%20Rd%2C%20above%20Zudio%2C%20Rajkot%2C%20Gujarat%20360005!5e0!3m2!1sen!2sin!4v1710934068309!5m2!1sen!2sin" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Office Location"
-            ></iframe>
           </div>
         </div>
       </section>
