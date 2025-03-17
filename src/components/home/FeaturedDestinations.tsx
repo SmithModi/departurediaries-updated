@@ -55,7 +55,7 @@ const featuredDestinations = [
     rating: 4.7,
     location: 'Singapore',
     duration: '4 Days',
-    longDescription: 'Explore the vibrant city-state of Singapore, where futuristic architecture blends seamlessly with rich cultural traditions. From the iconic Marina Bay Sands to the lush Gardens by the Bay, discover a city that's constantly reinventing itself while preserving its diverse heritage.',
+    longDescription: "Explore the vibrant city-state of Singapore, where futuristic architecture blends seamlessly with rich cultural traditions. From the iconic Marina Bay Sands to the lush Gardens by the Bay, discover a city that's constantly reinventing itself while preserving its diverse heritage.",
     highlights: [
       'Visit the stunning Gardens by the Bay and the iconic Supertrees',
       'Explore cultural neighborhoods like Chinatown and Little India',
@@ -73,7 +73,7 @@ const featuredDestinations = [
     rating: 4.9,
     location: 'Kashmir, India',
     duration: '6 Days',
-    longDescription: 'Experience the serene beauty of Kashmir, often referred to as "Paradise on Earth." From the tranquil Dal Lake to the majestic Himalayan peaks, discover breathtaking landscapes, vibrant local culture, and warm hospitality in this northern gem of India.',
+    longDescription: "Experience the serene beauty of Kashmir, often referred to as \"Paradise on Earth.\" From the tranquil Dal Lake to the majestic Himalayan peaks, discover breathtaking landscapes, vibrant local culture, and warm hospitality in this northern gem of India.",
     highlights: [
       'Stay in a traditional houseboat on the beautiful Dal Lake',
       'Explore the picturesque Mughal Gardens of Srinagar',
@@ -91,7 +91,7 @@ const featuredDestinations = [
     rating: 4.8,
     location: 'Vietnam',
     duration: '8 Days',
-    longDescription: 'Journey through the diverse landscapes of Vietnam, from bustling cities to serene countryside. Explore ancient temples, cruise through limestone karsts in Halong Bay, and indulge in the country\'s world-famous cuisine, all while experiencing the rich cultural heritage and warm hospitality.',
+    longDescription: "Journey through the diverse landscapes of Vietnam, from bustling cities to serene countryside. Explore ancient temples, cruise through limestone karsts in Halong Bay, and indulge in the country's world-famous cuisine, all while experiencing the rich cultural heritage and warm hospitality.",
     highlights: [
       'Cruise through the stunning limestone formations of Halong Bay',
       'Explore the charming ancient town of Hoi An with its lantern-lit streets',
