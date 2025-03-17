@@ -23,7 +23,16 @@ const Contact = () => {
 
   // Handle form submission
   const onSubmit = (data: any) => {
-    console.log('Form submitted:', data);
+    const { name, email, subject, message } = data;
+    const whatsappNumber = '6352711793';
+    const whatsappMessage = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    // Reset the form
     form.reset();
     alert('Thank you for your message! We will get back to you soon.');
   };
