@@ -58,7 +58,8 @@ const Contact = () => {
               <SectionHeading
                 subtitle="Reach Out To Us"
                 title="Get in Touch"
-                alignment="left"
+                centered={false}
+                className="text-left"
               />
               
               <p className="text-gray-600 dark:text-gray-300 mb-8">
@@ -222,7 +223,8 @@ const Contact = () => {
           <SectionHeading
             subtitle="Find Us"
             title="Our Location"
-            description="Visit our office in Rajkot to discuss your travel plans in person."
+            centered={true}
+            className="mb-8"
           />
           
           <div className="mt-8 rounded-lg overflow-hidden shadow-lg h-[400px]">
