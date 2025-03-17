@@ -1,3 +1,4 @@
+
 import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -52,6 +53,16 @@ const featuredDestinations = [
     image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop',
     price: '1099',
     rating: 4.7,
+    location: 'Singapore',
+    duration: '4 Days',
+    longDescription: 'Explore the vibrant city-state of Singapore, where futuristic architecture blends seamlessly with rich cultural traditions. From the iconic Marina Bay Sands to the lush Gardens by the Bay, discover a city that's constantly reinventing itself while preserving its diverse heritage.',
+    highlights: [
+      'Visit the stunning Gardens by the Bay and the iconic Supertrees',
+      'Explore cultural neighborhoods like Chinatown and Little India',
+      'Experience the nighttime Safari at Singapore Zoo',
+      'Enjoy shopping on Orchard Road, Singapore\'s premier shopping district',
+      'Sample delicious food at Singapore\'s famous hawker centers'
+    ]
   },
   {
     id: 4,
@@ -60,6 +71,16 @@ const featuredDestinations = [
     image: 'https://images.unsplash.com/photo-1566837497312-7be4ebb33e06?q=80&w=2070&auto=format&fit=crop',
     price: '899',
     rating: 4.9,
+    location: 'Kashmir, India',
+    duration: '6 Days',
+    longDescription: 'Experience the serene beauty of Kashmir, often referred to as "Paradise on Earth." From the tranquil Dal Lake to the majestic Himalayan peaks, discover breathtaking landscapes, vibrant local culture, and warm hospitality in this northern gem of India.',
+    highlights: [
+      'Stay in a traditional houseboat on the beautiful Dal Lake',
+      'Explore the picturesque Mughal Gardens of Srinagar',
+      'Visit the stunning mountain resort of Gulmarg',
+      'Experience a traditional Shikara ride on the lakes',
+      'Shop for authentic Kashmiri handicrafts and pashmina shawls'
+    ]
   },
   {
     id: 5,
@@ -68,6 +89,16 @@ const featuredDestinations = [
     image: 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop',
     price: '949',
     rating: 4.8,
+    location: 'Vietnam',
+    duration: '8 Days',
+    longDescription: 'Journey through the diverse landscapes of Vietnam, from bustling cities to serene countryside. Explore ancient temples, cruise through limestone karsts in Halong Bay, and indulge in the country\'s world-famous cuisine, all while experiencing the rich cultural heritage and warm hospitality.',
+    highlights: [
+      'Cruise through the stunning limestone formations of Halong Bay',
+      'Explore the charming ancient town of Hoi An with its lantern-lit streets',
+      'Experience the vibrant street life of Hanoi and Ho Chi Minh City',
+      'Visit the terraced rice fields of Sapa',
+      'Sample authentic Vietnamese cuisine through street food tours'
+    ]
   },
 ];
 
