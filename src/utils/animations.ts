@@ -1,9 +1,9 @@
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, RefObject } from 'react';
 
 // Hook to determine if an element is in viewport
-export function useInView(options = {}) {
-  const ref = useRef(null);
+export function useInView(options = {}): [RefObject<HTMLDivElement>, boolean] {
+  const ref = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
