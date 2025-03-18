@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -7,7 +6,6 @@ import { cn } from '@/lib/utils';
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Destinations', path: '/destinations' },
-  { name: 'Packages', path: '/packages' },
   { name: 'Gallery', path: '/gallery' },
   { name: 'Blog', path: '/blog' },
   { name: 'About', path: '/about-us' },  // Updated from '/about' to '/about-us'
