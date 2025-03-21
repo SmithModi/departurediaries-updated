@@ -37,11 +37,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - Packages link removed */}
           <div>
             <h4 className="font-display text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-4">
-              {['Home', 'Destinations', 'Packages', 'Gallery', 'Blog', 'About', 'Contact'].map((item) => (
+              {['Home', 'Destinations', 'Gallery', 'Blog', 'About', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="text-gray-400 hover:text-travel-500 transition-colors">
                     {item}

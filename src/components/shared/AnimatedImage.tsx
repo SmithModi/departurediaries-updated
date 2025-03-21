@@ -20,9 +20,17 @@ const AnimatedImage = ({
   priority = false,
 }: AnimatedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(priority);
+  const uniqueId = `image-${src.split('/').pop()?.replace(/[^a-zA-Z0-9]/g, '') || Math.random().toString(36).substring(2, 9)}`;
   
   useEffect(() => {
+    // Preload the image if it's priority
+    if (priority) {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => setIsLoaded(true);
+    }
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -30,20 +38,20 @@ const AnimatedImage = ({
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: "200px" } // Larger rootMargin for earlier loading
     );
 
-    const element = document.getElementById(`image-${src.split('/').pop()}`);
-    if (element) observer.observe(element);
+    const element = document.getElementById(uniqueId);
+    if (element && !priority) observer.observe(element);
 
     return () => {
       observer.disconnect();
     };
-  }, [src]);
+  }, [src, priority, uniqueId]);
 
   return (
     <div
-      id={`image-${src.split('/').pop()}`}
+      id={uniqueId}
       className={cn(
         "overflow-hidden relative",
         className

@@ -32,13 +32,16 @@ const DestinationCard = ({
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Convert price to rupees format if it's not already
+  const formattedPrice = price.includes('₹') ? price : `₹${price}`;
+
   const destination = {
     id,
     name,
     location,
     image,
     description,
-    price,
+    price: formattedPrice,
     duration,
     rating,
     // Extended information for the modal
@@ -76,9 +79,10 @@ const DestinationCard = ({
               "w-full h-full transition-transform duration-700",
               isHovered ? "scale-110" : "scale-100"
             )}
+            priority={true}
           />
           <div className="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">
-            ${price}
+            {formattedPrice}
           </div>
         </div>
         

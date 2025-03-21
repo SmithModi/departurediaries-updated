@@ -24,6 +24,11 @@ interface DestinationDetailsModalProps {
 const DestinationDetailsModal = ({ isOpen, onClose, destination }: DestinationDetailsModalProps) => {
   if (!destination) return null;
 
+  // Ensure price has the rupee symbol
+  const formattedPrice = destination.price.includes('₹') 
+    ? destination.price 
+    : `₹${destination.price}`;
+
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
@@ -40,10 +45,11 @@ const DestinationDetailsModal = ({ isOpen, onClose, destination }: DestinationDe
             src={destination.image} 
             alt={destination.name} 
             className="w-full h-full object-cover"
+            priority={true}
           />
           
           <div className="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">
-            ${destination.price}
+            {formattedPrice}
           </div>
         </div>
         

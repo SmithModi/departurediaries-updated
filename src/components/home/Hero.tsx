@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { ArrowRight, Search } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
@@ -66,38 +66,6 @@ const Hero = () => {
             memorable journeys tailored to your travel aspirations.
           </p>
 
-          {/* Search Form */}
-          <div className="w-full max-w-3xl mx-auto glass-panel p-4 rounded-xl mb-10">
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex-grow">
-                <label htmlFor="destination" className="block text-sm font-medium text-white/80 mb-1 text-left">
-                  Destination
-                </label>
-                <input
-                  type="text"
-                  id="destination"
-                  className="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-travel-500"
-                  placeholder="Where do you want to go?"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-white/80 mb-1 text-left">
-                  When
-                </label>
-                <input
-                  type="date"
-                  className="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-travel-500"
-                />
-              </div>
-              <div className="self-end">
-                <button className="h-12 w-full md:w-auto px-8 bg-travel-600 hover:bg-travel-700 text-white rounded-lg flex items-center justify-center transition-colors">
-                  <Search size={18} className="mr-2" />
-                  <span>Search</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
           <Link 
             to="/destinations" 
             className="inline-flex items-center group text-white font-medium"
@@ -107,8 +75,6 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-
-      {/* Scroll Indicator removed */}
     </section>
   );
 };

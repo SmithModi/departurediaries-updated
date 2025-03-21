@@ -1,4 +1,3 @@
-
 import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,14 +7,14 @@ import AnimatedImage from '../shared/AnimatedImage';
 import { useInView } from '@/utils/animations';
 import DestinationDetailsModal from '../destinations/DestinationDetailsModal';
 
-// Sample featured destinations data
+// Sample featured destinations data with prices in rupees
 const featuredDestinations = [
   {
     id: 1,
     name: 'Dubai',
     description: 'Experience luxury amidst desert landscapes',
     image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8f5?q=80&w=2071&auto=format&fit=crop',
-    price: '1299',
+    price: '108,000',
     rating: 4.8,
     location: 'Dubai, UAE',
     duration: '5 Days',
@@ -33,7 +32,7 @@ const featuredDestinations = [
     name: 'Bali',
     description: 'Discover serenity in tropical paradise',
     image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2938&auto=format&fit=crop',
-    price: '999',
+    price: '83,000',
     rating: 4.9,
     location: 'Bali, Indonesia',
     duration: '7 Days',
@@ -51,7 +50,7 @@ const featuredDestinations = [
     name: 'Singapore',
     description: 'Urban marvels meet cultural heritage',
     image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop',
-    price: '1099',
+    price: '91,500',
     rating: 4.7,
     location: 'Singapore',
     duration: '4 Days',
@@ -69,7 +68,7 @@ const featuredDestinations = [
     name: 'Kashmir',
     description: 'Breathtaking landscapes of the Himalayas',
     image: 'https://images.unsplash.com/photo-1566837497312-7be4ebb33e06?q=80&w=2070&auto=format&fit=crop',
-    price: '899',
+    price: '75,000',
     rating: 4.9,
     location: 'Kashmir, India',
     duration: '6 Days',
@@ -87,7 +86,7 @@ const featuredDestinations = [
     name: 'Vietnam',
     description: 'Ancient traditions meet natural beauty',
     image: 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop',
-    price: '949',
+    price: '79,000',
     rating: 4.8,
     location: 'Vietnam',
     duration: '8 Days',
@@ -200,9 +199,10 @@ const FeaturedDestinations = () => {
                     src={destination.image}
                     alt={destination.name}
                     className="h-full w-full"
+                    priority={index < 3}
                   />
                   <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
-                    ${destination.price}
+                    ₹{destination.price}
                   </div>
                 </div>
                 <div className="p-5">
