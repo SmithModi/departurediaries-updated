@@ -10,7 +10,6 @@ import {
   Youtube,
   Clock 
 } from 'lucide-react';
-import AnimatedImage from '../shared/AnimatedImage';
 
 const Footer = () => {
   return (
@@ -20,12 +19,6 @@ const Footer = () => {
           {/* Company Information */}
           <div className="space-y-6">
             <div className="flex flex-col items-center sm:items-start">
-              <AnimatedImage 
-                src="/lovable-uploads/30a275f4-a33d-43f8-b2e1-3d386a232096.png" 
-                alt="Departure Diaries Logo" 
-                className="h-24 w-auto mb-4" 
-                priority
-              />
               <h3 className="font-display text-2xl font-bold">Departure Diaries</h3>
             </div>
             <p className="text-gray-400 max-w-xs">
