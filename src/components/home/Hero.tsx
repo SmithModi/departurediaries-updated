@@ -108,13 +108,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1.5 h-3 bg-white/70 rounded-full mt-1.5 animate-[bounce_1.5s_infinite]" />
-        </div>
-        <span className="text-white/70 text-xs mt-2">Scroll Down</span>
-      </div>
+      {/* Scroll Indicator removed */}
     </section>
   );
 };

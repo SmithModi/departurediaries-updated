@@ -6,6 +6,7 @@ import { Layout } from "@/components/layout/Layout";
 import { ServiceCard } from "@/components/about/ServiceCard";
 import { AboutHero } from "@/components/about/AboutHero";
 import { CompanyValues } from "@/components/about/CompanyValues";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const [ref, isInView] = useInView({ threshold: 0.1 });
@@ -104,12 +105,12 @@ const AboutUs = () => {
                   Let us help you plan your perfect getaway. Our travel experts are ready to create a personalized itinerary that matches your dreams and budget.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <a href="/contact" className="inline-flex items-center justify-center bg-travel-600 hover:bg-travel-700 text-white transition-colors px-6 py-3 rounded-lg font-medium">
+                  <Link to="/contact" className="inline-flex items-center justify-center bg-travel-600 hover:bg-travel-700 text-white transition-colors px-6 py-3 rounded-lg font-medium">
                     Contact Us
-                  </a>
-                  <a href="/destinations" className="inline-flex items-center justify-center bg-white border border-travel-600 text-travel-600 hover:bg-travel-50 transition-colors px-6 py-3 rounded-lg font-medium">
+                  </Link>
+                  <Link to="/destinations" className="inline-flex items-center justify-center bg-white border border-travel-600 text-travel-600 hover:bg-travel-50 transition-colors px-6 py-3 rounded-lg font-medium">
                     Explore Destinations
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="relative h-64 md:h-auto">

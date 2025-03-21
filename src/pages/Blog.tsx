@@ -334,7 +334,7 @@ const Blog = () => {
               {/* Destination Filter */}
               <div className="mb-4">
                 <h3 className="font-medium mb-2">Filter by Destination</h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {destinations.map((destination) => (
                     <button
                       key={destination}
@@ -343,7 +343,7 @@ const Blog = () => {
                         "px-4 py-2 rounded-full text-sm transition-colors",
                         selectedDestination === destination
                           ? "bg-travel-600 text-white"
-                          : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+                          : "bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
                       )}
                     >
                       {destination}
@@ -538,29 +538,7 @@ const Blog = () => {
               </div>
             
               {/* Categories */}
-              <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 mb-6">
-                <h3 className="font-bold text-lg mb-4">Categories</h3>
-                <ul className="space-y-2">
-                  {categories.map((category) => (
-                    <li key={category.name}>
-                      <button
-                        onClick={() => setSelectedCategory(category.name)}
-                        className={cn(
-                          "flex items-center justify-between w-full py-2 px-3 rounded-lg text-left transition-colors",
-                          selectedCategory === category.name 
-                            ? "bg-travel-100 dark:bg-travel-900/20 text-travel-700 dark:text-travel-400" 
-                            : "hover:bg-gray-100 dark:hover:bg-gray-800"
-                        )}
-                      >
-                        <span>{category.name}</span>
-                        <span className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full">
-                          {category.count}
-                        </span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              
               
               {/* Newsletter */}
               <div className="bg-travel-50 dark:bg-travel-900/20 rounded-xl p-6">

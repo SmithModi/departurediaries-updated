@@ -193,7 +193,7 @@ const DestinationGrid = () => {
           </div>
           
           {/* Categories (Desktop) */}
-          <div className="hidden lg:flex space-x-2 overflow-x-auto">
+          <div className="hidden lg:flex space-x-2 overflow-x-auto pt-2">
             {categories.map((category) => (
               <button
                 key={category}
@@ -202,7 +202,7 @@ const DestinationGrid = () => {
                   "px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors",
                   selectedCategory === category
                     ? "bg-travel-600 text-white"
-                    : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                 )}
               >
                 {category}
@@ -219,7 +219,7 @@ const DestinationGrid = () => {
           <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
             <div className="mb-4">
               <h3 className="font-medium mb-2">Categories</h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 {categories.map((category) => (
                   <button
                     key={category}
@@ -228,7 +228,7 @@ const DestinationGrid = () => {
                       "px-3 py-1 rounded-lg text-sm font-medium transition-colors",
                       selectedCategory === category
                         ? "bg-travel-600 text-white"
-                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                        : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
                     )}
                   >
                     {category}
