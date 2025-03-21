@@ -7,8 +7,10 @@ import {
   Facebook, 
   Twitter, 
   Instagram, 
-  Youtube 
+  Youtube,
+  Clock 
 } from 'lucide-react';
+import AnimatedImage from '../shared/AnimatedImage';
 
 const Footer = () => {
   return (
@@ -17,7 +19,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* Company Information */}
           <div className="space-y-6">
-            <h3 className="font-display text-2xl font-bold">Departure Diaries</h3>
+            <div className="flex flex-col items-center sm:items-start">
+              <AnimatedImage 
+                src="/lovable-uploads/30a275f4-a33d-43f8-b2e1-3d386a232096.png" 
+                alt="Departure Diaries Logo" 
+                className="h-24 w-auto mb-4" 
+                priority
+              />
+              <h3 className="font-display text-2xl font-bold">Departure Diaries</h3>
+            </div>
             <p className="text-gray-400 max-w-xs">
               Crafting unforgettable travel experiences that turn moments into memories and journeys into stories.
             </p>
@@ -71,15 +81,27 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin className="text-travel-500 mt-1 flex-shrink-0" size={18} />
-                <span className="text-gray-400">123 Travel Lane, Adventure City, World 10001</span>
+                <span className="text-gray-400">
+                  Office No 1018, 10th Floor, RK World Tower,<br />
+                  Near Sheetal Park BRTS, 150 Feet Ring Rd,<br />
+                  above Zudio, Rajkot, Gujarat 360006
+                </span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Clock className="text-travel-500 flex-shrink-0" size={18} />
+                <span className="text-gray-400">Open ⋅ Closes 7:30 pm</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="text-travel-500 flex-shrink-0" size={18} />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <a href="tel:+919898048778" className="text-gray-400 hover:text-travel-500 transition-colors">
+                  +91 98980 48778
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="text-travel-500 flex-shrink-0" size={18} />
-                <span className="text-gray-400">info@departurediaries.com</span>
+                <a href="mailto:info@departurediaries.com" className="text-gray-400 hover:text-travel-500 transition-colors">
+                  info@departurediaries.com
+                </a>
               </li>
             </ul>
           </div>

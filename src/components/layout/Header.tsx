@@ -1,7 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import AnimatedImage from '../shared/AnimatedImage';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -41,12 +43,20 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
           to="/" 
-          className={cn(
+          className="flex items-center space-x-2"
+        >
+          <AnimatedImage 
+            src="/lovable-uploads/30a275f4-a33d-43f8-b2e1-3d386a232096.png" 
+            alt="Departure Diaries Logo" 
+            className="h-12 w-auto" 
+            priority
+          />
+          <span className={cn(
             "font-display text-2xl font-bold transition-all duration-300",
             isScrolled ? "text-travel-800" : "text-white"
-          )}
-        >
-          Departure Diaries
+          )}>
+            Departure Diaries
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

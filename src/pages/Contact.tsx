@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
@@ -7,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import SectionHeading from '@/components/shared/SectionHeading';
+import AnimatedImage from '@/components/shared/AnimatedImage';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
@@ -70,6 +72,15 @@ const Contact = () => {
                   className="text-left"
                 />
                 
+                <div className="mb-6">
+                  <AnimatedImage 
+                    src="/lovable-uploads/30a275f4-a33d-43f8-b2e1-3d386a232096.png" 
+                    alt="Departure Diaries Logo" 
+                    className="h-24 w-auto mx-auto lg:mx-0" 
+                    priority
+                  />
+                </div>
+                
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Have questions about a destination or need help planning your 
                   trip? Our travel experts are ready to assist you.
@@ -88,6 +99,20 @@ const Contact = () => {
                           Office No 1018, 10th Floor, RK World Tower<br />
                           Near Sheetal Park BRTS, 150 Feet Ring Rd,<br />
                           above Zudio, Rajkot, Gujarat 360006
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardContent className="p-4 flex items-start gap-4">
+                      <div className="h-8 w-8 rounded-full bg-travel-100 flex items-center justify-center flex-shrink-0">
+                        <Clock className="text-travel-600" size={16} />
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-base mb-1">Business Hours</h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">
+                          Open ⋅ Closes 7:30 pm
                         </p>
                       </div>
                     </CardContent>

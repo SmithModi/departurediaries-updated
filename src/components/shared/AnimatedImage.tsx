@@ -38,7 +38,7 @@ const AnimatedImage = ({
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "200px" } // Larger rootMargin for earlier loading
+      { threshold: 0.1, rootMargin: "300px" } // Increased rootMargin for earlier loading
     );
 
     const element = document.getElementById(uniqueId);
@@ -48,6 +48,17 @@ const AnimatedImage = ({
       observer.disconnect();
     };
   }, [src, priority, uniqueId]);
+
+  // Force load fallback for images that might fail to trigger onLoad
+  useEffect(() => {
+    if (isInView) {
+      const timer = setTimeout(() => {
+        if (!isLoaded) setIsLoaded(true);
+      }, 2000); // Fallback after 2 seconds
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isInView, isLoaded]);
 
   return (
     <div
