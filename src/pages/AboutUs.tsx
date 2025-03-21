@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useInView } from "@/utils/animations";
 import { Layout } from "@/components/layout/Layout";
 import { ServiceCard } from "@/components/about/ServiceCard";
-import { TeamMember } from "@/components/about/TeamMember";
 import { AboutHero } from "@/components/about/AboutHero";
 import { CompanyValues } from "@/components/about/CompanyValues";
 
@@ -93,43 +92,7 @@ const AboutUs = () => {
         </div>
       </section>
       
-      <section className="py-16 md:py-24 bg-travel-700 text-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Meet Our Team</h2>
-            <p className="text-lg max-w-2xl mx-auto opacity-90">
-              Our experienced team of travel enthusiasts is dedicated to creating unforgettable experiences
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <TeamMember 
-              name="Sarah Johnson" 
-              role="Founder & CEO" 
-              image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop&q=80"
-              bio="With over 15 years in the travel industry, Sarah founded Wanderlust Travel with a vision to create authentic travel experiences."
-            />
-            <TeamMember 
-              name="David Chen" 
-              role="Head of Destinations" 
-              image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&auto=format&fit=crop&q=80"
-              bio="David's extensive knowledge of global destinations ensures our packages offer the perfect balance of popular attractions and hidden gems."
-            />
-            <TeamMember 
-              name="Priya Patel" 
-              role="Travel Consultant" 
-              image="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&auto=format&fit=crop&q=80"
-              bio="Priya specializes in luxury travel and has personally visited over 50 countries, bringing firsthand knowledge to her client consultations."
-            />
-            <TeamMember 
-              name="Michael Rodriguez" 
-              role="Adventure Specialist" 
-              image="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&auto=format&fit=crop&q=80"
-              bio="From trekking in Nepal to diving in the Great Barrier Reef, Michael crafts unforgettable adventure experiences."
-            />
-          </div>
-        </div>
-      </section>
+      {/* Meet Our Team section removed */}
       
       <section className="py-16 md:py-24 bg-gradient-to-b from-travel-50 to-white">
         <div className="container mx-auto px-4 md:px-8">

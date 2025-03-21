@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/layout/Header';
@@ -78,7 +77,6 @@ const blogPosts = [
     category: "Adventure Travel",
     destination: "Ladakh"
   },
-  // New blog posts for each destination
   {
     id: 7,
     title: "Dubai After Dark: Nightlife and Entertainment Guide",
@@ -349,38 +347,6 @@ const Blog = () => {
                       )}
                     >
                       {destination}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            
-              {/* Category Pills */}
-              <div className="mb-2">
-                <h3 className="font-medium mb-2">Filter by Category</h3>
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    onClick={() => setSelectedCategory('All')}
-                    className={cn(
-                      "px-4 py-2 rounded-full text-sm transition-colors",
-                      selectedCategory === 'All'
-                        ? "bg-travel-600 text-white"
-                        : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-                    )}
-                  >
-                    All Categories
-                  </button>
-                  {categories.slice(0, 6).map((category) => (
-                    <button
-                      key={category.name}
-                      onClick={() => setSelectedCategory(category.name)}
-                      className={cn(
-                        "px-4 py-2 rounded-full text-sm transition-colors",
-                        selectedCategory === category.name
-                          ? "bg-travel-600 text-white"
-                          : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-                      )}
-                    >
-                      {category.name}
                     </button>
                   ))}
                 </div>
