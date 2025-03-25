@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6",
+        "sticky top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6",
         isScrolled ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-md" : "bg-transparent",
       )}
     >

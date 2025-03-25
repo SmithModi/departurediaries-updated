@@ -100,23 +100,28 @@ const AboutUs = () => {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <h2 className="text-3xl font-display font-bold text-gray-800 mb-6">Ready to Start Your Journey?</h2>
+                <h2 className="text-3xl font-display font-bold text-gray-800 mb-4">Special Ayodhya Offer</h2>
+                <div className="mb-4 inline-flex items-center bg-sunset-100 text-sunset-800 px-4 py-2 rounded-full font-medium text-sm">
+                  Exclusive Deal
+                </div>
                 <p className="text-lg text-gray-600 mb-8">
-                  Let us help you plan your perfect getaway. Our travel experts are ready to create a personalized itinerary that matches your dreams and budget.
+                  <span className="font-bold text-travel-700">Pay ZERO Convenience Fee FOREVER</span> on all flight bookings to Ayodhya! 
+                  Experience spiritual journeys without any extra costs. Book now and enjoy our special offer exclusively 
+                  designed for pilgrims and travelers visiting the sacred city.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link to="/contact" className="inline-flex items-center justify-center bg-travel-600 hover:bg-travel-700 text-white transition-colors px-6 py-3 rounded-lg font-medium">
-                    Contact Us
+                    Book Ayodhya Flights
                   </Link>
                   <Link to="/destinations" className="inline-flex items-center justify-center bg-white border border-travel-600 text-travel-600 hover:bg-travel-50 transition-colors px-6 py-3 rounded-lg font-medium">
                     Explore Destinations
                   </Link>
                 </div>
               </div>
-              <div className="relative h-64 md:h-auto">
+              <div className="relative h-80 md:h-auto">
                 <img 
-                  src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&auto=format&fit=crop&q=80" 
-                  alt="Scenic mountain view" 
+                  src="https://images.meesho.com/images/products/383833302/axe8s_512.webp" 
+                  alt="Ram Mandir Ayodhya" 
                   className="w-full h-full object-cover"
                 />
               </div>
