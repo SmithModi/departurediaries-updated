@@ -24,7 +24,7 @@ const Destinations = () => {
               Explore Our Destinations
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
-              Discover handpicked destinations around the world, from bustling cities to serene beaches and majestic mountains.
+              Discover handpicked domestic and international destinations, from majestic Himalayas to exotic beach getaways and vibrant city experiences.
             </p>
           </div>
         </div>

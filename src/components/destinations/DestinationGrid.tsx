@@ -7,72 +7,240 @@ import { useInView } from '@/utils/animations';
 
 // Sample destinations data
 const destinationsData = [
+  // Domestic Destinations
   {
     id: 1,
-    name: 'Dubai City Tour',
-    location: 'Dubai, UAE',
-    image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8f5?q=80&w=2071&auto=format&fit=crop',
-    description: 'Experience the ultimate luxury and architectural marvels of Dubai with our comprehensive city tour package.',
-    price: '1299',
-    duration: '5 Days',
+    name: 'Himachal Pradesh',
+    location: 'North India',
+    image: 'https://images.unsplash.com/photo-1626621214907-ce1eda06cf7f?q=80&w=2070&auto=format&fit=crop',
+    description: 'Experience the majestic Himalayan landscapes with snow-capped mountains, lush valleys, and charming hill stations.',
+    price: '24,999',
+    duration: '6 Days',
     rating: 4.8,
-    tags: ['City', 'Luxury']
+    tags: ['Mountain', 'Nature', 'Adventure']
   },
   {
     id: 2,
-    name: 'Bali Beach Retreat',
-    location: 'Bali, Indonesia',
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2938&auto=format&fit=crop',
-    description: 'Unwind on pristine beaches and immerse yourself in Balinese culture with our specially crafted beach retreat package.',
-    price: '999',
+    name: 'Jammu & Kashmir',
+    location: 'North India',
+    image: 'https://images.unsplash.com/photo-1566837497312-7be4ebb33e06?q=80&w=2070&auto=format&fit=crop',
+    description: 'Discover the paradise on Earth with beautiful lakes, meadows, and gardens surrounded by snow-capped mountains.',
+    price: '28,500',
     duration: '7 Days',
     rating: 4.9,
-    tags: ['Beach', 'Culture']
+    tags: ['Mountain', 'Nature', 'Culture']
   },
   {
     id: 3,
-    name: 'Singapore Explorer',
-    location: 'Singapore',
-    image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop',
-    description: 'Discover the perfect blend of urban sophistication and natural beauty in the garden city of Singapore.',
-    price: '1099',
-    duration: '4 Days',
-    rating: 4.7,
-    tags: ['City', 'Family']
+    name: 'Leh Ladakh',
+    location: 'North India',
+    image: 'https://images.unsplash.com/photo-1533130061792-64b345e4a833?q=80&w=2070&auto=format&fit=crop',
+    description: 'Journey through the high-altitude desert landscapes with ancient monasteries, pristine lakes, and stunning mountain passes.',
+    price: '32,999',
+    duration: '8 Days',
+    rating: 4.9,
+    tags: ['Adventure', 'Mountain', 'Culture']
   },
   {
     id: 4,
-    name: 'Kashmir Serenity',
-    location: 'Kashmir, India',
-    image: 'https://images.unsplash.com/photo-1566837497312-7be4ebb33e06?q=80&w=2070&auto=format&fit=crop',
-    description: 'Experience the breathtaking landscapes and serene beauty of Kashmir, often called "Paradise on Earth".',
-    price: '899',
-    duration: '6 Days',
-    rating: 4.9,
-    tags: ['Mountain', 'Nature']
+    name: 'Sikkim & Darjeeling',
+    location: 'North East India',
+    image: 'https://images.unsplash.com/photo-1544958574-d4b7515e105d?q=80&w=2070&auto=format&fit=crop',
+    description: 'Explore the breathtaking landscapes of the Eastern Himalayas with tea gardens, Buddhist monasteries, and views of Kanchenjunga.',
+    price: '26,499',
+    duration: '7 Days',
+    rating: 4.7,
+    tags: ['Mountain', 'Culture', 'Nature']
   },
   {
     id: 5,
-    name: 'Vietnam Heritage Tour',
-    location: 'Multiple Cities, Vietnam',
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop',
-    description: 'Journey through Vietnam\'s rich cultural heritage, spectacular landscapes, and vibrant city life.',
-    price: '949',
+    name: 'South India Tour',
+    location: 'Tamil Nadu & Karnataka',
+    image: 'https://images.unsplash.com/photo-1516715094483-75da7dee9758?q=80&w=2067&auto=format&fit=crop',
+    description: 'Immerse yourself in the rich cultural heritage, ancient temples, and beautiful landscapes of South India.',
+    price: '22,999',
     duration: '8 Days',
-    rating: 4.8,
-    tags: ['Culture', 'Adventure']
+    rating: 4.6,
+    tags: ['Culture', 'Heritage', 'Nature']
   },
   {
     id: 6,
-    name: 'Ladakh Adventure',
-    location: 'Ladakh, India',
-    image: 'https://images.unsplash.com/photo-1533130061792-64b345e4a833?q=80&w=2070&auto=format&fit=crop',
-    description: 'Embark on a thrilling journey through the high-altitude desert landscapes and ancient monasteries of Ladakh.',
-    price: '1199',
-    duration: '9 Days',
-    rating: 4.7,
-    tags: ['Adventure', 'Mountain']
+    name: 'Kerala Backwaters',
+    location: 'Kerala, India',
+    image: 'https://images.unsplash.com/photo-1602215138096-d188b163a215?q=80&w=2070&auto=format&fit=crop',
+    description: 'Experience the serene backwaters, lush greenery, pristine beaches, and unique culture of God's Own Country.',
+    price: '25,999',
+    duration: '6 Days',
+    rating: 4.8,
+    tags: ['Beach', 'Nature', 'Culture']
   },
+  {
+    id: 7,
+    name: 'Goa Beach Escape',
+    location: 'Goa, India',
+    image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=2074&auto=format&fit=crop',
+    description: 'Relax on pristine beaches, enjoy water sports, and experience the unique blend of Indian and Portuguese cultures.',
+    price: '18,999',
+    duration: '5 Days',
+    rating: 4.7,
+    tags: ['Beach', 'Adventure', 'Party']
+  },
+  
+  // International Destinations
+  {
+    id: 8,
+    name: 'Dubai Extravaganza',
+    location: 'Dubai, UAE',
+    image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8f5?q=80&w=2071&auto=format&fit=crop',
+    description: 'Experience the luxury and architectural marvels of Dubai with shopping, desert safaris, and futuristic attractions.',
+    price: '78,999',
+    duration: '6 Days',
+    rating: 4.8,
+    tags: ['Luxury', 'City', 'Shopping']
+  },
+  {
+    id: 9,
+    name: 'Thailand Adventure',
+    location: 'Bangkok & Phuket, Thailand',
+    image: 'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=2070&auto=format&fit=crop',
+    description: 'Discover the perfect blend of vibrant city life, beautiful beaches, and rich cultural heritage.',
+    price: '65,999',
+    duration: '7 Days',
+    rating: 4.7,
+    tags: ['Beach', 'Culture', 'Adventure']
+  },
+  {
+    id: 10,
+    name: 'Singapore Explorer',
+    location: 'Singapore',
+    image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop',
+    description: 'Experience the perfect blend of urban sophistication, multicultural heritage, and futuristic attractions.',
+    price: '72,999',
+    duration: '5 Days',
+    rating: 4.8,
+    tags: ['City', 'Family', 'Shopping']
+  },
+  {
+    id: 11,
+    name: 'Malaysia Highlights',
+    location: 'Kuala Lumpur & Langkawi',
+    image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=2064&auto=format&fit=crop',
+    description: 'Explore modern cities, pristine beaches, lush rainforests, and the rich multicultural heritage of Malaysia.',
+    price: '68,500',
+    duration: '6 Days',
+    rating: 4.6,
+    tags: ['City', 'Beach', 'Nature']
+  },
+  {
+    id: 12,
+    name: 'Bali Paradise',
+    location: 'Bali, Indonesia',
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2938&auto=format&fit=crop',
+    description: 'Unwind on pristine beaches, explore ancient temples, and immerse yourself in the unique Balinese culture.',
+    price: '63,999',
+    duration: '7 Days',
+    rating: 4.9,
+    tags: ['Beach', 'Culture', 'Nature']
+  },
+  {
+    id: 13,
+    name: 'Vietnam Heritage',
+    location: 'Multiple Cities, Vietnam',
+    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop',
+    description: 'Journey through Vietnam's rich cultural heritage, spectacular landscapes, and vibrant city life.',
+    price: '70,999',
+    duration: '8 Days',
+    rating: 4.8,
+    tags: ['Culture', 'Adventure', 'Nature']
+  },
+  {
+    id: 14,
+    name: 'Mauritius Retreat',
+    location: 'Mauritius',
+    image: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?q=80&w=2070&auto=format&fit=crop',
+    description: 'Relax in paradise with pristine beaches, crystal-clear waters, and luxurious resorts on this tropical island.',
+    price: '82,999',
+    duration: '6 Days',
+    rating: 4.9,
+    tags: ['Beach', 'Luxury', 'Honeymoon']
+  },
+  {
+    id: 15,
+    name: 'Sri Lanka Explorer',
+    location: 'Multiple Cities, Sri Lanka',
+    image: 'https://images.unsplash.com/photo-1586028371031-0821c079e2e7?q=80&w=1972&auto=format&fit=crop',
+    description: 'Discover ancient ruins, wildlife sanctuaries, tea plantations, and pristine beaches in this tropical paradise.',
+    price: '59,999',
+    duration: '7 Days',
+    rating: 4.7,
+    tags: ['Culture', 'Nature', 'Beach']
+  },
+  {
+    id: 16,
+    name: 'Hong Kong & Macau',
+    location: 'Hong Kong & Macau',
+    image: 'https://images.unsplash.com/photo-1536599424071-0b215a388ba7?q=80&w=2070&auto=format&fit=crop',
+    description: 'Experience the unique blend of East and West, modern skyscrapers, vibrant markets, and entertainment options.',
+    price: '76,999',
+    duration: '6 Days',
+    rating: 4.7,
+    tags: ['City', 'Shopping', 'Entertainment']
+  },
+  {
+    id: 17,
+    name: 'Baku Adventure',
+    location: 'Baku, Azerbaijan',
+    image: 'https://images.unsplash.com/photo-1665580652513-91ac30a69e36?q=80&w=2070&auto=format&fit=crop',
+    description: 'Explore the fascinating blend of ancient history and modern architecture in this emerging destination.',
+    price: '79,999',
+    duration: '5 Days',
+    rating: 4.6,
+    tags: ['Culture', 'City', 'History']
+  },
+  {
+    id: 18,
+    name: 'Georgia Tour',
+    location: 'Multiple Cities, Georgia',
+    image: 'https://images.unsplash.com/photo-1631002165139-81c716532830?q=80&w=2070&auto=format&fit=crop',
+    description: 'Discover breathtaking mountain landscapes, ancient churches, and delicious cuisine in this Caucasian gem.',
+    price: '74,999',
+    duration: '7 Days',
+    rating: 4.8,
+    tags: ['Nature', 'Culture', 'History']
+  },
+  {
+    id: 19,
+    name: 'Armenia Experience',
+    location: 'Multiple Cities, Armenia',
+    image: 'https://images.unsplash.com/photo-1543862475-eb136770ae9b?q=80&w=2070&auto=format&fit=crop',
+    description: 'Explore one of the world's oldest civilizations with ancient monasteries, stunning landscapes, and rich culture.',
+    price: '71,999',
+    duration: '6 Days',
+    rating: 4.7,
+    tags: ['History', 'Culture', 'Nature']
+  },
+  {
+    id: 20,
+    name: 'Maldives Paradise',
+    location: 'Maldives',
+    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2071&auto=format&fit=crop',
+    description: 'Experience luxury overwater villas, crystal-clear turquoise waters, and pristine white sandy beaches.',
+    price: '98,999',
+    duration: '5 Days',
+    rating: 4.9,
+    tags: ['Luxury', 'Beach', 'Honeymoon']
+  },
+  {
+    id: 21,
+    name: 'Bhutan Discovery',
+    location: 'Multiple Cities, Bhutan',
+    image: 'https://images.unsplash.com/photo-1533903345306-15d1c30952de?q=80&w=2069&auto=format&fit=crop',
+    description: 'Immerse yourself in the mystical land of happiness with ancient monasteries, untouched natural beauty, and unique culture.',
+    price: '69,999',
+    duration: '7 Days',
+    rating: 4.8,
+    tags: ['Culture', 'Nature', 'Adventure']
+  }
 ];
 
 // Filter categories
@@ -86,23 +254,32 @@ const categories = [
   'Luxury',
   'Nature',
   'Family',
+  'History',
+  'Honeymoon',
 ];
 
 // Price ranges
 const priceRanges = [
   { label: 'All Prices', value: 'all' },
-  { label: 'Under $500', value: 'under-500' },
-  { label: '$500 - $1000', value: '500-1000' },
-  { label: '$1000 - $1500', value: '1000-1500' },
-  { label: 'Over $1500', value: 'over-1500' },
+  { label: 'Under ₹30,000', value: 'under-30000' },
+  { label: '₹30,000 - ₹60,000', value: '30000-60000' },
+  { label: '₹60,000 - ₹80,000', value: '60000-80000' },
+  { label: 'Over ₹80,000', value: 'over-80000' },
 ];
 
 // Duration options
 const durationOptions = [
   { label: 'Any Duration', value: 'any' },
-  { label: '1-3 Days', value: '1-3' },
-  { label: '4-7 Days', value: '4-7' },
+  { label: '1-5 Days', value: '1-5' },
+  { label: '6-7 Days', value: '6-7' },
   { label: '8+ Days', value: '8+' },
+];
+
+// Region options
+const regionOptions = [
+  { label: 'All Regions', value: 'all' },
+  { label: 'Domestic', value: 'domestic' },
+  { label: 'International', value: 'international' },
 ];
 
 const DestinationGrid = () => {
@@ -110,6 +287,7 @@ const DestinationGrid = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedPrice, setSelectedPrice] = useState('all');
   const [selectedDuration, setSelectedDuration] = useState('any');
+  const [selectedRegion, setSelectedRegion] = useState('all');
   const [showFilters, setShowFilters] = useState(false);
   
   const [ref, isInView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -128,29 +306,37 @@ const DestinationGrid = () => {
     
     // Price filter
     let matchesPrice = true;
-    const price = parseInt(destination.price);
-    if (selectedPrice === 'under-500') {
-      matchesPrice = price < 500;
-    } else if (selectedPrice === '500-1000') {
-      matchesPrice = price >= 500 && price <= 1000;
-    } else if (selectedPrice === '1000-1500') {
-      matchesPrice = price > 1000 && price <= 1500;
-    } else if (selectedPrice === 'over-1500') {
-      matchesPrice = price > 1500;
+    const price = parseInt(destination.price.replace(/,/g, ''));
+    if (selectedPrice === 'under-30000') {
+      matchesPrice = price < 30000;
+    } else if (selectedPrice === '30000-60000') {
+      matchesPrice = price >= 30000 && price <= 60000;
+    } else if (selectedPrice === '60000-80000') {
+      matchesPrice = price > 60000 && price <= 80000;
+    } else if (selectedPrice === 'over-80000') {
+      matchesPrice = price > 80000;
     }
     
     // Duration filter
     let matchesDuration = true;
     const days = parseInt(destination.duration.split(' ')[0]);
-    if (selectedDuration === '1-3') {
-      matchesDuration = days >= 1 && days <= 3;
-    } else if (selectedDuration === '4-7') {
-      matchesDuration = days >= 4 && days <= 7;
+    if (selectedDuration === '1-5') {
+      matchesDuration = days >= 1 && days <= 5;
+    } else if (selectedDuration === '6-7') {
+      matchesDuration = days >= 6 && days <= 7;
     } else if (selectedDuration === '8+') {
       matchesDuration = days >= 8;
     }
     
-    return matchesSearch && matchesCategory && matchesPrice && matchesDuration;
+    // Region filter
+    let matchesRegion = true;
+    if (selectedRegion === 'domestic') {
+      matchesRegion = destination.id <= 7; // IDs 1-7 are domestic
+    } else if (selectedRegion === 'international') {
+      matchesRegion = destination.id > 7; // IDs 8+ are international
+    }
+    
+    return matchesSearch && matchesCategory && matchesPrice && matchesDuration && matchesRegion;
   });
 
   const clearFilters = () => {
@@ -158,9 +344,10 @@ const DestinationGrid = () => {
     setSelectedCategory('All');
     setSelectedPrice('all');
     setSelectedDuration('any');
+    setSelectedRegion('all');
   };
 
-  const hasActiveFilters = searchTerm !== '' || selectedCategory !== 'All' || selectedPrice !== 'all' || selectedDuration !== 'any';
+  const hasActiveFilters = searchTerm !== '' || selectedCategory !== 'All' || selectedPrice !== 'all' || selectedDuration !== 'any' || selectedRegion !== 'all';
 
   return (
     <div ref={ref as React.RefObject<HTMLDivElement>}>
@@ -179,6 +366,21 @@ const DestinationGrid = () => {
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
             </div>
+          </div>
+          
+          {/* Region Filter (Desktop) */}
+          <div className="hidden lg:block">
+            <select
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
+              className="h-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-travel-500"
+            >
+              {regionOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
           </div>
           
           {/* Filter Button (Mobile) */}
@@ -214,9 +416,24 @@ const DestinationGrid = () => {
         {/* Mobile Filters */}
         <div className={cn(
           "mt-4 lg:hidden overflow-hidden transition-all duration-300",
-          showFilters ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          showFilters ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
         )}>
           <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
+            <div className="mb-4">
+              <h3 className="font-medium mb-2">Region</h3>
+              <select
+                value={selectedRegion}
+                onChange={(e) => setSelectedRegion(e.target.value)}
+                className="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-travel-500"
+              >
+                {regionOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            
             <div className="mb-4">
               <h3 className="font-medium mb-2">Categories</h3>
               <div className="flex flex-wrap gap-2 pt-2">
@@ -285,6 +502,17 @@ const DestinationGrid = () => {
                 <div className="inline-flex items-center bg-gray-100 dark:bg-gray-800 text-sm rounded-full px-3 py-1">
                   <span>"{searchTerm}"</span>
                   <button onClick={() => setSearchTerm('')} className="ml-1">
+                    <X size={14} />
+                  </button>
+                </div>
+              )}
+              
+              {selectedRegion !== 'all' && (
+                <div className="inline-flex items-center bg-gray-100 dark:bg-gray-800 text-sm rounded-full px-3 py-1">
+                  <span>
+                    {regionOptions.find(option => option.value === selectedRegion)?.label}
+                  </span>
+                  <button onClick={() => setSelectedRegion('all')} className="ml-1">
                     <X size={14} />
                   </button>
                 </div>

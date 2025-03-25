@@ -1,3 +1,4 @@
+
 import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,28 +12,46 @@ import DestinationDetailsModal from '../destinations/DestinationDetailsModal';
 const featuredDestinations = [
   {
     id: 1,
-    name: 'Dubai',
-    description: 'Experience luxury amidst desert landscapes',
-    image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8f5?q=80&w=2071&auto=format&fit=crop',
-    price: '108,000',
+    name: 'Himachal Pradesh',
+    description: 'Experience majestic mountains and valleys',
+    image: 'https://images.unsplash.com/photo-1626621214907-ce1eda06cf7f?q=80&w=2070&auto=format&fit=crop',
+    price: '24,999',
     rating: 4.8,
-    location: 'Dubai, UAE',
-    duration: '5 Days',
-    longDescription: 'Experience the ultimate luxury and architectural marvels of Dubai. From the towering Burj Khalifa to the stunning Palm Jumeirah, discover a city that defies expectations. Enjoy shopping at world-class malls, desert safaris, and exquisite dining experiences.',
+    location: 'North India',
+    duration: '6 Days',
+    longDescription: 'Experience the majestic Himalayan landscapes of Himachal Pradesh with snow-capped mountains, lush green valleys, and charming hill stations. Visit popular destinations like Shimla, Manali, Dharamshala, and Dalhousie. Enjoy adventure activities, nature walks, and local Himachali cuisine.',
     highlights: [
-      'Visit the iconic Burj Khalifa, the world\'s tallest building',
-      'Experience desert safari with dune bashing and traditional dinner',
-      'Explore the magnificent Dubai Mall and see the Dubai Fountain show',
-      'Relax on pristine beaches along the Arabian Gulf',
-      'Tour the historic Al Fahidi neighborhood and Dubai Creek'
+      'Visit the picturesque hill station of Shimla, the former summer capital of British India',
+      'Experience adventure sports like paragliding in Solang Valley',
+      'Explore the hot springs and ancient temples in Manikaran',
+      'Take a trip to the stunning Rohtang Pass with panoramic mountain views',
+      'Visit the residence of the Dalai Lama in McLeodganj, Dharamshala'
     ]
   },
   {
     id: 2,
-    name: 'Bali',
-    description: 'Discover serenity in tropical paradise',
+    name: 'Jammu & Kashmir',
+    description: 'Discover paradise on Earth',
+    image: 'https://images.unsplash.com/photo-1566837497312-7be4ebb33e06?q=80&w=2070&auto=format&fit=crop',
+    price: '28,500',
+    rating: 4.9,
+    location: 'North India',
+    duration: '7 Days',
+    longDescription: 'Discover the paradise on Earth with beautiful lakes, meadows, and gardens surrounded by snow-capped mountains. From the serene Dal Lake to the majestic Himalayan peaks, experience breathtaking landscapes, vibrant local culture, and warm hospitality in this northern gem of India.',
+    highlights: [
+      'Stay in a traditional houseboat on the beautiful Dal Lake',
+      'Explore the picturesque Mughal Gardens of Srinagar',
+      'Visit the stunning mountain resort of Gulmarg',
+      'Experience a traditional Shikara ride on the lakes',
+      'Shop for authentic Kashmiri handicrafts and pashmina shawls'
+    ]
+  },
+  {
+    id: 3,
+    name: 'Bali Paradise',
+    description: 'Unwind in tropical splendor',
     image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2938&auto=format&fit=crop',
-    price: '83,000',
+    price: '63,999',
     rating: 4.9,
     location: 'Bali, Indonesia',
     duration: '7 Days',
@@ -46,57 +65,57 @@ const featuredDestinations = [
     ]
   },
   {
-    id: 3,
-    name: 'Singapore',
-    description: 'Urban marvels meet cultural heritage',
-    image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop',
-    price: '91,500',
-    rating: 4.7,
-    location: 'Singapore',
-    duration: '4 Days',
-    longDescription: "Explore the vibrant city-state of Singapore, where futuristic architecture blends seamlessly with rich cultural traditions. From the iconic Marina Bay Sands to the lush Gardens by the Bay, discover a city that's constantly reinventing itself while preserving its diverse heritage.",
-    highlights: [
-      'Visit the stunning Gardens by the Bay and the iconic Supertrees',
-      'Explore cultural neighborhoods like Chinatown and Little India',
-      'Experience the nighttime Safari at Singapore Zoo',
-      'Enjoy shopping on Orchard Road, Singapore\'s premier shopping district',
-      'Sample delicious food at Singapore\'s famous hawker centers'
-    ]
-  },
-  {
     id: 4,
-    name: 'Kashmir',
-    description: 'Breathtaking landscapes of the Himalayas',
-    image: 'https://images.unsplash.com/photo-1566837497312-7be4ebb33e06?q=80&w=2070&auto=format&fit=crop',
-    price: '75,000',
+    name: 'Leh Ladakh',
+    description: 'Journey through high Himalayan landscapes',
+    image: 'https://images.unsplash.com/photo-1533130061792-64b345e4a833?q=80&w=2070&auto=format&fit=crop',
+    price: '32,999',
     rating: 4.9,
-    location: 'Kashmir, India',
-    duration: '6 Days',
-    longDescription: "Experience the serene beauty of Kashmir, often referred to as \"Paradise on Earth.\" From the tranquil Dal Lake to the majestic Himalayan peaks, discover breathtaking landscapes, vibrant local culture, and warm hospitality in this northern gem of India.",
+    location: 'North India',
+    duration: '8 Days',
+    longDescription: "Embark on a thrilling journey through the high-altitude desert landscapes and ancient monasteries of Ladakh. From the stunning Pangong Lake to the majestic Nubra Valley, experience breathtaking views, ancient Buddhist culture, and challenging mountain passes in this remote Himalayan region.",
     highlights: [
-      'Stay in a traditional houseboat on the beautiful Dal Lake',
-      'Explore the picturesque Mughal Gardens of Srinagar',
-      'Visit the stunning mountain resort of Gulmarg',
-      'Experience a traditional Shikara ride on the lakes',
-      'Shop for authentic Kashmiri handicrafts and pashmina shawls'
+      'Visit the iconic Pangong Lake with its changing blue hues',
+      'Explore ancient Buddhist monasteries like Thiksey and Hemis',
+      'Experience the unique culture and traditions of Ladakhi people',
+      'Drive through Khardung La, one of the world\'s highest motorable passes',
+      'Witness the confluence of Indus and Zanskar rivers'
     ]
   },
   {
     id: 5,
-    name: 'Vietnam',
-    description: 'Ancient traditions meet natural beauty',
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop',
-    price: '79,000',
+    name: 'Dubai Extravaganza',
+    description: 'Experience luxury and modern marvels',
+    image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8f5?q=80&w=2071&auto=format&fit=crop',
+    price: '78,999',
     rating: 4.8,
-    location: 'Vietnam',
-    duration: '8 Days',
-    longDescription: "Journey through the diverse landscapes of Vietnam, from bustling cities to serene countryside. Explore ancient temples, cruise through limestone karsts in Halong Bay, and indulge in the country's world-famous cuisine, all while experiencing the rich cultural heritage and warm hospitality.",
+    location: 'Dubai, UAE',
+    duration: '6 Days',
+    longDescription: "Experience the ultimate luxury and architectural marvels of Dubai. From the towering Burj Khalifa to the stunning Palm Jumeirah, discover a city that defies expectations. Enjoy shopping at world-class malls, desert safaris, and exquisite dining experiences.",
     highlights: [
-      'Cruise through the stunning limestone formations of Halong Bay',
-      'Explore the charming ancient town of Hoi An with its lantern-lit streets',
-      'Experience the vibrant street life of Hanoi and Ho Chi Minh City',
-      'Visit the terraced rice fields of Sapa',
-      'Sample authentic Vietnamese cuisine through street food tours'
+      'Visit the iconic Burj Khalifa, the world\'s tallest building',
+      'Experience desert safari with dune bashing and traditional dinner',
+      'Explore the magnificent Dubai Mall and see the Dubai Fountain show',
+      'Relax on pristine beaches along the Arabian Gulf',
+      'Tour the historic Al Fahidi neighborhood and Dubai Creek'
+    ]
+  },
+  {
+    id: 6,
+    name: 'Maldives Paradise',
+    description: 'Ultimate luxury beach getaway',
+    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2071&auto=format&fit=crop',
+    price: '98,999',
+    rating: 4.9,
+    location: 'Maldives',
+    duration: '5 Days',
+    longDescription: "Experience luxury overwater villas, crystal-clear turquoise waters, and pristine white sandy beaches in the Maldives. Enjoy world-class snorkeling and diving among vibrant coral reefs, indulge in spa treatments, and witness breathtaking sunsets in this tropical paradise.",
+    highlights: [
+      'Stay in luxurious overwater villas with direct ocean access',
+      'Snorkel or dive among vibrant coral reefs and tropical fish',
+      'Enjoy romantic dinners on private beaches',
+      'Experience underwater restaurants and spas',
+      'Take a sunset cruise to spot dolphins'
     ]
   },
 ];
@@ -198,7 +217,7 @@ const FeaturedDestinations = () => {
                   <AnimatedImage
                     src={destination.image}
                     alt={destination.name}
-                    className="h-full w-full"
+                    className="h-full w-full object-cover"
                     priority={index < 3}
                   />
                   <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
