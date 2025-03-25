@@ -4,11 +4,9 @@ import {
   MapPin, 
   Phone, 
   Mail, 
-  Facebook, 
+  Instagram,
+  Clock,
   Twitter, 
-  Instagram, 
-  Youtube,
-  Clock 
 } from 'lucide-react';
 
 const Footer = () => {
@@ -25,22 +23,16 @@ const Footer = () => {
               Crafting unforgettable travel experiences that turn moments into memories and journeys into stories.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-travel-500 transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-travel-500 transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-travel-500 transition-colors">
+              <a href="https://www.instagram.com/departure.diaries/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-travel-500 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-travel-500 transition-colors">
-                <Youtube size={20} />
+              <a href="https://x.com/KAKKADANAND" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-travel-500 transition-colors">
+                <Twitter size={20} />
               </a>
             </div>
           </div>
 
-          {/* Quick Links - Packages link removed */}
+          {/* Quick Links */}
           <div>
             <h4 className="font-display text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-4">
@@ -54,7 +46,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Popular Destinations */}
+          {/* Popular Destinations - Update text for tourist visa */}
           <div>
             <h4 className="font-display text-lg font-semibold mb-6">Popular Destinations</h4>
             <ul className="space-y-4">
@@ -65,6 +57,11 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/destinations" className="text-gray-400 hover:text-travel-500 transition-colors">
+                  all major tourist places (tourist visa only)
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -94,6 +91,12 @@ const Footer = () => {
                 <Mail className="text-travel-500 flex-shrink-0" size={18} />
                 <a href="mailto:info@departurediaries.com" className="text-gray-400 hover:text-travel-500 transition-colors">
                   info@departurediaries.com
+                </a>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Mail className="text-travel-500 flex-shrink-0" size={18} />
+                <a href="mailto:departurediaries.in@gmail.com" className="text-gray-400 hover:text-travel-500 transition-colors">
+                  departurediaries.in@gmail.com
                 </a>
               </li>
             </ul>

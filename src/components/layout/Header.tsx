@@ -36,7 +36,7 @@ const Header = () => {
     <header
       className={cn(
         "sticky top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6",
-        isScrolled ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-md" : "bg-transparent",
+        isScrolled ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-md" : "bg-white dark:bg-gray-950 shadow-sm",
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -44,10 +44,7 @@ const Header = () => {
           to="/" 
           className="flex items-center space-x-2"
         >
-          <span className={cn(
-            "font-display text-2xl font-bold transition-all duration-300",
-            isScrolled ? "text-travel-800" : "text-white"
-          )}>
+          <span className="font-display text-2xl font-bold text-travel-800">
             Departure Diaries
           </span>
         </Link>
@@ -60,13 +57,9 @@ const Header = () => {
               to={link.path}
               className={cn(
                 "text-sm font-medium transition-all duration-300 border-b-2",
-                isScrolled ? 
-                  (location.pathname === link.path ? 
-                    "border-travel-500 text-travel-800" : 
-                    "border-transparent text-gray-700 hover:text-travel-600 hover:border-travel-300") : 
-                  (location.pathname === link.path ? 
-                    "border-white text-white" : 
-                    "border-transparent text-white/80 hover:text-white hover:border-white/50")
+                location.pathname === link.path ? 
+                  "border-travel-500 text-travel-800" : 
+                  "border-transparent text-gray-700 hover:text-travel-600 hover:border-travel-300"
               )}
             >
               {link.name}

@@ -158,6 +158,10 @@ const Contact = () => {
                           <a href="mailto:info@departurediaries.com" className="hover:text-travel-600 transition-colors">
                             info@departurediaries.com
                           </a>
+                          <br />
+                          <a href="mailto:departurediaries.in@gmail.com" className="hover:text-travel-600 transition-colors">
+                            departurediaries.in@gmail.com
+                          </a>
                         </p>
                       </div>
                     </CardContent>
