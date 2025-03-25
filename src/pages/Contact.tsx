@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -44,6 +44,10 @@ const Contact = () => {
     document.title = 'Contact Us - Departure Diaries';
   }, []);
 
+  const handleReviewClick = () => {
+    window.open('https://g.page/r/CUjxtuqeT4K6EB0/review', '_blank');
+  };
+
   return (
     <>
       <Header />
@@ -56,6 +60,15 @@ const Contact = () => {
               We're here to answer any questions you have about our travel experiences. 
               Get in touch with us and start planning your dream journey.
             </p>
+            
+            {/* Review button */}
+            <Button 
+              onClick={handleReviewClick} 
+              className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black"
+            >
+              <Star className="mr-2 h-4 w-4 fill-current" />
+              Review Us on Google
+            </Button>
           </div>
         </section>
 
