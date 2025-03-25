@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/layout/Header';
@@ -9,15 +10,15 @@ import AnimatedImage from '@/components/shared/AnimatedImage';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Calendar, Clock, ArrowRight, ChevronRight, User } from 'lucide-react';
 
-// Blog data
+// Updated Blog data with focus on new destinations
 const blogPosts = [
   {
     id: 1,
-    title: "The Ultimate Dubai Travel Guide for 2023",
+    title: "The Ultimate Dubai Travel Guide for 2024",
     excerpt: "Discover the best attractions, restaurants, and hidden gems in the city of luxury and innovation.",
     date: "June 15, 2023",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1582672060674-bc2bd808a8f5?q=80&w=2071&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop",
     author: "Sarah Williams",
     category: "Travel Guides",
     destination: "Dubai"
@@ -28,7 +29,7 @@ const blogPosts = [
     excerpt: "Explore the spiritual side of Bali through its ancient and magnificent temples.",
     date: "May 22, 2023",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2938&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1604881991720-f91add269bed?q=80&w=2071&auto=format&fit=crop",
     author: "Michael Chen",
     category: "Cultural Travel",
     destination: "Bali"
@@ -39,7 +40,7 @@ const blogPosts = [
     excerpt: "How to experience the best of Singapore without breaking the bank.",
     date: "April 10, 2023",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=2070&auto=format&fit=crop",
     author: "David Thompson",
     category: "Budget Travel",
     destination: "Singapore"
@@ -50,7 +51,7 @@ const blogPosts = [
     excerpt: "Venture beyond the tourist spots and discover the untouched beauty of Kashmir's valleys.",
     date: "March 28, 2023",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1566837497312-7be4ebb33e06?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1555952494-efd681c7e3f9?q=80&w=2070&auto=format&fit=crop",
     author: "Priya Sharma",
     category: "Adventure Travel",
     destination: "Kashmir"
@@ -61,7 +62,7 @@ const blogPosts = [
     excerpt: "Explore the diverse and flavorful cuisine of Vietnam from north to south.",
     date: "February 15, 2023",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2070&auto=format&fit=crop",
     author: "Thomas Wright",
     category: "Food & Travel",
     destination: "Vietnam"
@@ -72,21 +73,21 @@ const blogPosts = [
     excerpt: "Everything you need to know about planning a trekking adventure in the majestic landscapes of Ladakh.",
     date: "January 5, 2023",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1533130061792-64b345e4a833?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1516638812782-8e3bae70c72a?q=80&w=2071&auto=format&fit=crop",
     author: "Alex Johnson",
     category: "Adventure Travel",
     destination: "Ladakh"
   },
   {
     id: 7,
-    title: "Dubai After Dark: Nightlife and Entertainment Guide",
-    excerpt: "Explore the vibrant nightlife scene in Dubai, from rooftop bars to desert parties.",
+    title: "Ayodhya: A Spiritual Journey to Ram Mandir",
+    excerpt: "Experience the spiritual essence of Ayodhya and the magnificent Ram Mandir.",
     date: "August 10, 2023",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.meesho.com/images/products/383833302/axe8s_512.webp",
     author: "James Wilson",
-    category: "Nightlife",
-    destination: "Dubai"
+    category: "Spiritual Travel",
+    destination: "Ayodhya"
   },
   {
     id: 8,
@@ -116,7 +117,7 @@ const blogPosts = [
     excerpt: "Tips and locations for capturing the perfect shots of Kashmir's majestic scenery.",
     date: "October 12, 2023",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1555952494-efd681c7e3f9?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1590677879513-e3b6ac8709cf?q=80&w=2070&auto=format&fit=crop",
     author: "Arjun Mehta",
     category: "Photography",
     destination: "Kashmir"
@@ -127,7 +128,7 @@ const blogPosts = [
     excerpt: "Explore the rich historical sites and cultural landmarks throughout Vietnam.",
     date: "November 8, 2023",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop",
     author: "Nathan Lee",
     category: "Historical Travel",
     destination: "Vietnam"
@@ -138,14 +139,14 @@ const blogPosts = [
     excerpt: "Experience the tranquil beauty of Ladakh during its snow-covered winter months.",
     date: "December 15, 2023",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1516638812782-8e3bae70c72a?q=80&w=2071&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518499845966-9a86ddb68051?q=80&w=2070&auto=format&fit=crop",
     author: "Sophia Patel",
     category: "Seasonal Travel",
     destination: "Ladakh"
   },
   {
     id: 13,
-    title: "Dubai for Families: Kid-Friendly Attractions and Activities",
+    title: "Dubai for Families: Kid-Friendly Attractions",
     excerpt: "A comprehensive guide to enjoying Dubai with children of all ages.",
     date: "January 20, 2024",
     readTime: "6 min read",
@@ -156,72 +157,69 @@ const blogPosts = [
   },
   {
     id: 14,
-    title: "Bali's Spiritual Journey: Yoga and Wellness Retreats",
-    excerpt: "The best yoga studios, wellness centers, and retreat experiences in Bali.",
+    title: "Ayodhya's Festivals: When to Visit Ram Mandir",
+    excerpt: "The best times to visit Ayodhya to experience its vibrant festivals and spiritual atmosphere.",
     date: "February 18, 2024",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1604881991720-f91add269bed?q=80&w=2071&auto=format&fit=crop",
-    author: "Mei Lin",
-    category: "Wellness Travel",
-    destination: "Bali"
+    image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=2070&auto=format&fit=crop",
+    author: "Ravi Kumar",
+    category: "Festival Travel",
+    destination: "Ayodhya"
   },
   {
     id: 15,
-    title: "Singapore's Architectural Marvels: Design and Innovation",
+    title: "Singapore's Architectural Marvels",
     excerpt: "Explore Singapore's blend of colonial heritage and futuristic architectural wonders.",
     date: "March 5, 2024",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1568454537842-d933259bb258?q=80&w=2070&auto=format&fit=crop",
     author: "Daniel Tan",
     category: "Architecture",
     destination: "Singapore"
   },
   {
     id: 16,
-    title: "Kashmir's Culinary Delights: A Food Lover's Guide",
-    excerpt: "Savor the unique flavors and traditional dishes of Kashmiri cuisine.",
+    title: "Traveling to Ayodhya: Transportation Guide",
+    excerpt: "Everything you need to know about getting to Ayodhya with zero convenience fees on flights.",
     date: "April 12, 2024",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1567337710282-00832b415979?q=80&w=2130&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1575384043001-f37f476c51a5?q=80&w=1974&auto=format&fit=crop",
     author: "Nisha Kapoor",
-    category: "Food & Travel",
-    destination: "Kashmir"
+    category: "Travel Tips",
+    destination: "Ayodhya"
   }
 ];
 
-// Featured post data
+// Featured post data - Updated to highlight Ayodhya
 const featuredPost = {
   id: 17,
-  title: "Sustainable Travel: How to Reduce Your Carbon Footprint",
-  excerpt: "Learn practical ways to make your travels more environmentally friendly without sacrificing experiences.",
-  content: "As global tourism continues to grow, so does its environmental impact. This comprehensive guide explores how travelers can minimize their carbon footprint while still enjoying enriching travel experiences. From choosing eco-friendly accommodations and transportation options to supporting local communities and conservation efforts, discover actionable steps for more sustainable adventures.",
-  date: "July 2, 2023",
-  readTime: "12 min read",
-  image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=3506&auto=format&fit=crop",
-  author: "Emma Robinson",
-  category: "Sustainable Travel"
+  title: "Ayodhya: The City of Lord Ram and Zero Convenience Fee Flights",
+  excerpt: "Discover how to visit the holy city of Ayodhya with exclusive zero convenience fee flights.",
+  content: "Ayodhya, the birthplace of Lord Ram, has become one of India's most significant pilgrimage destinations following the inauguration of the grand Ram Mandir. Our travel agency is proud to offer an exclusive benefit to all pilgrims: zero convenience fees on all Ayodhya flight bookings. This special offer allows devotees to visit this sacred city without additional booking charges, making spiritual journeys more accessible. Learn about the best times to visit, accommodation options, and must-see attractions in this comprehensive guide to planning your Ayodhya pilgrimage.",
+  date: "May 2, 2024",
+  readTime: "10 min read",
+  image: "https://images.meesho.com/images/products/383833302/axe8s_512.webp",
+  author: "Anand Kakkad",
+  category: "Spiritual Travel"
 };
 
-// Blog categories - updated with new categories and counts
+// Updated blog categories with Ayodhya/spiritual focus
 const categories = [
   { name: "Travel Guides", count: 15 },
   { name: "Adventure Travel", count: 12 },
-  { name: "Cultural Travel", count: 8 },
+  { name: "Spiritual Travel", count: 8 },
   { name: "Food & Travel", count: 10 },
   { name: "Budget Travel", count: 7 },
-  { name: "Sustainable Travel", count: 9 },
-  { name: "Nightlife", count: 4 },
+  { name: "Festival Travel", count: 5 },
   { name: "Beach Travel", count: 6 },
   { name: "Nature Travel", count: 8 },
   { name: "Photography", count: 5 },
   { name: "Historical Travel", count: 7 },
-  { name: "Seasonal Travel", count: 4 },
   { name: "Family Travel", count: 6 },
-  { name: "Wellness Travel", count: 5 },
   { name: "Architecture", count: 3 }
 ];
 
-// Destinations filter
+// Destinations filter - Added Ayodhya
 const destinations = [
   "All",
   "Dubai",
@@ -229,7 +227,8 @@ const destinations = [
   "Singapore",
   "Kashmir",
   "Vietnam",
-  "Ladakh"
+  "Ladakh",
+  "Ayodhya"
 ];
 
 const Blog = () => {
@@ -507,11 +506,11 @@ const Blog = () => {
             )}
           </div>
           
-          {/* Right Sidebar */}
+          {/* Right Sidebar - Removed newsletter section */}
           <div className="lg:col-span-1">
             <div className="sticky top-24">
               {/* Popular Posts */}
-              <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 mb-6">
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
                 <h3 className="font-bold text-lg mb-4">Popular Articles</h3>
                 <div className="space-y-4">
                   {blogPosts.slice(0, 4).map((post) => (
@@ -534,27 +533,6 @@ const Blog = () => {
                       </div>
                     </div>
                   ))}
-                </div>
-              </div>
-            
-              {/* Categories */}
-              
-              
-              {/* Newsletter */}
-              <div className="bg-travel-50 dark:bg-travel-900/20 rounded-xl p-6">
-                <h3 className="font-bold text-lg mb-2">Subscribe to Our Newsletter</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                  Get the latest travel tips and insights delivered to your inbox.
-                </p>
-                <div className="space-y-3">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-travel-500"
-                  />
-                  <button className="w-full bg-travel-600 hover:bg-travel-700 text-white py-2 rounded-lg transition-colors">
-                    Subscribe
-                  </button>
                 </div>
               </div>
             </div>

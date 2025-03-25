@@ -21,14 +21,26 @@ const AnimatedImage = ({
 }: AnimatedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
+  const [imgSrc, setImgSrc] = useState(src);
   const uniqueId = `image-${src.split('/').pop()?.replace(/[^a-zA-Z0-9]/g, '') || Math.random().toString(36).substring(2, 9)}`;
+  
+  useEffect(() => {
+    // Update imgSrc when src prop changes
+    setImgSrc(src);
+    setIsLoaded(false);
+  }, [src]);
   
   useEffect(() => {
     // Preload the image if it's priority
     if (priority) {
       const img = new Image();
-      img.src = src;
+      img.src = imgSrc;
       img.onload = () => setIsLoaded(true);
+      img.onerror = () => {
+        console.error(`Failed to load image: ${imgSrc}`);
+        // Fallback to a placeholder if image fails to load
+        setImgSrc('/placeholder.svg');
+      };
     }
     
     const observer = new IntersectionObserver(
@@ -47,7 +59,7 @@ const AnimatedImage = ({
     return () => {
       observer.disconnect();
     };
-  }, [src, priority, uniqueId]);
+  }, [imgSrc, priority, uniqueId]);
 
   // Force load fallback for images that might fail to trigger onLoad
   useEffect(() => {
@@ -60,6 +72,13 @@ const AnimatedImage = ({
     }
   }, [isInView, isLoaded]);
 
+  const handleError = () => {
+    console.error(`Failed to load image: ${imgSrc}`);
+    // Fallback to a placeholder if image fails to load
+    setImgSrc('/placeholder.svg');
+    setIsLoaded(true);
+  };
+
   return (
     <div
       id={uniqueId}
@@ -70,11 +89,12 @@ const AnimatedImage = ({
     >
       {(isInView || priority) && (
         <img
-          src={src}
+          src={imgSrc}
           alt={alt}
           width={width}
           height={height}
           onLoad={() => setIsLoaded(true)}
+          onError={handleError}
           className={cn(
             "w-full h-full object-cover transition-all duration-700",
             isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105",

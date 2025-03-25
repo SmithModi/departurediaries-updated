@@ -46,22 +46,17 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Popular Destinations - Update text for tourist visa */}
+          {/* Popular Destinations - Remove tourist visa text */}
           <div>
             <h4 className="font-display text-lg font-semibold mb-6">Popular Destinations</h4>
             <ul className="space-y-4">
-              {['Dubai', 'Vietnam', 'Singapore', 'Bali', 'Kashmir', 'Ladakh'].map((item) => (
+              {['Dubai', 'Vietnam', 'Singapore', 'Bali', 'Kashmir', 'Ladakh', 'Ayodhya'].map((item) => (
                 <li key={item}>
                   <Link to="/destinations" className="text-gray-400 hover:text-travel-500 transition-colors">
                     {item}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link to="/destinations" className="text-gray-400 hover:text-travel-500 transition-colors">
-                  all major tourist places (tourist visa only)
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -103,29 +98,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Subscription */}
-        <div className="border-t border-gray-800 pt-8 pb-12">
-          <div className="max-w-xl mx-auto text-center">
-            <h4 className="font-display text-xl font-semibold mb-3">Subscribe to Our Newsletter</h4>
-            <p className="text-gray-400 mb-6">Stay updated with our latest travel deals and destination guides.</p>
-            <form className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-grow px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-travel-500"
-                required
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-travel-600 hover:bg-travel-700 text-white font-medium rounded-lg transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-
-        {/* Copyright */}
+        {/* Copyright - Remove newsletter section */}
         <div className="text-center text-gray-500 text-sm border-t border-gray-800 pt-8">
           <p>© {new Date().getFullYear()} Departure Diaries. All rights reserved.</p>
         </div>

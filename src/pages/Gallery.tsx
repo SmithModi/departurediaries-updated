@@ -6,90 +6,90 @@ import SectionHeading from '@/components/shared/SectionHeading';
 import { useInView } from '@/utils/animations';
 import { cn } from '@/lib/utils';
 import AnimatedImage from '@/components/shared/AnimatedImage';
-import { Camera, Heart, Share2 } from 'lucide-react';
+import { Camera } from 'lucide-react';
 
-// Gallery images array
+// Gallery images array - Updated with more stable image URLs
 const galleryImages = [
   {
     id: 1,
-    src: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8f5?q=80&w=2071&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop',
     alt: 'Dubai Skyline',
     location: 'Dubai, UAE',
     category: 'Cities'
   },
   {
     id: 2,
-    src: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2938&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1604881991720-f91add269bed?q=80&w=2071&auto=format&fit=crop',
     alt: 'Bali Rice Terraces',
     location: 'Bali, Indonesia',
     category: 'Nature'
   },
   {
     id: 3,
-    src: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=2070&auto=format&fit=crop',
     alt: 'Singapore Marina Bay',
     location: 'Singapore',
     category: 'Cities'
   },
   {
     id: 4,
-    src: 'https://images.unsplash.com/photo-1566837497312-7be4ebb33e06?q=80&w=2070&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1555952494-efd681c7e3f9?q=80&w=2070&auto=format&fit=crop',
     alt: 'Kashmir Landscape',
     location: 'Kashmir, India',
     category: 'Mountains'
   },
   {
     id: 5,
-    src: 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2070&auto=format&fit=crop',
     alt: 'Vietnam Boat Tour',
     location: 'Ha Long Bay, Vietnam',
     category: 'Water'
   },
   {
     id: 6,
-    src: 'https://images.unsplash.com/photo-1533130061792-64b345e4a833?q=80&w=2070&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1516638812782-8e3bae70c72a?q=80&w=2071&auto=format&fit=crop',
     alt: 'Ladakh Mountains',
     location: 'Ladakh, India',
     category: 'Mountains'
   },
   {
     id: 7,
-    src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=3506&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2070&auto=format&fit=crop',
     alt: 'Mountain Sunset',
     location: 'Swiss Alps',
     category: 'Mountains'
   },
   {
     id: 8,
-    src: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?q=80&w=3648&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=2070&auto=format&fit=crop',
     alt: 'River Between Mountains',
     location: 'Norway',
     category: 'Nature'
   },
   {
     id: 9,
-    src: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=4928&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2070&auto=format&fit=crop',
     alt: 'Orange Flowers',
     location: 'Netherlands',
     category: 'Nature'
   },
   {
     id: 10,
-    src: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=3654&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=2070&auto=format&fit=crop',
     alt: 'Forest Trees',
     location: 'Oregon, USA',
     category: 'Nature'
   },
   {
     id: 11,
-    src: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=3072&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1604881991720-f91add269bed?q=80&w=2071&auto=format&fit=crop',
     alt: 'Pine Trees',
     location: 'Canada',
     category: 'Nature'
   },
   {
     id: 12,
-    src: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=3648&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?q=80&w=2070&auto=format&fit=crop',
     alt: 'Sun Through Trees',
     location: 'Redwood Forest, USA',
     category: 'Nature'
@@ -187,21 +187,12 @@ const Gallery = () => {
                   <Camera size={14} className="mr-1" />
                   <span>{image.location}</span>
                 </div>
-                
-                <div className="mt-3 flex items-center gap-2">
-                  <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 rounded-full transition-colors">
-                    <Heart size={16} className="text-white" />
-                  </button>
-                  <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 rounded-full transition-colors">
-                    <Share2 size={16} className="text-white" />
-                  </button>
-                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Featured Gallery Highlight */}
+        {/* Featured Gallery Highlight - Made Ayodhya image smaller */}
         <div className="mt-16 mb-12">
           <SectionHeading
             title="Highlighted Adventures"
@@ -210,29 +201,43 @@ const Gallery = () => {
             className="mb-8"
           />
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="relative rounded-xl overflow-hidden aspect-square md:aspect-[3/2] lg:aspect-[4/3]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="relative rounded-xl overflow-hidden aspect-square lg:aspect-[4/3]">
               <AnimatedImage
-                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=7372&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2070&auto=format&fit=crop"
                 alt="Mountain Summit"
                 className="w-full h-full object-cover"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
-                <h3 className="text-white font-bold text-2xl">Misty Mountain Peaks</h3>
+                <h3 className="text-white font-bold text-xl">Misty Mountain Peaks</h3>
                 <p className="text-white/90">Explore the tranquility above the clouds</p>
               </div>
             </div>
             
-            <div className="relative rounded-xl overflow-hidden aspect-square md:aspect-[3/2] lg:aspect-[4/3]">
+            {/* Ayodhya Ram Mandir - Smaller size */}
+            <div className="relative rounded-xl overflow-hidden aspect-square lg:aspect-[4/3]">
               <AnimatedImage
-                src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=3880&auto=format&fit=crop"
+                src="https://images.meesho.com/images/products/383833302/axe8s_512.webp"
+                alt="Ram Mandir Ayodhya"
+                className="w-full h-full object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
+                <h3 className="text-white font-bold text-xl">Ram Mandir, Ayodhya</h3>
+                <p className="text-white/90">Experience zero convenience fee on Ayodhya flights</p>
+              </div>
+            </div>
+            
+            <div className="relative rounded-xl overflow-hidden aspect-square lg:aspect-[4/3]">
+              <AnimatedImage
+                src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=2070&auto=format&fit=crop"
                 alt="Starry Night"
                 className="w-full h-full object-cover"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
-                <h3 className="text-white font-bold text-2xl">Stargazing Paradise</h3>
+                <h3 className="text-white font-bold text-xl">Stargazing Paradise</h3>
                 <p className="text-white/90">Witness the universe in all its glory</p>
               </div>
             </div>
